@@ -17,7 +17,7 @@ const ReportView = (): JSX.Element => {
   useEffect(() => {
     // Redirect to first report if no reportId is provided
     if (!reportId) {
-      navigate(`/report/${DEFAULT_REPORT_ID}`, { replace: true });
+      navigate(`/${DEFAULT_REPORT_ID}`, { replace: true });
     }
   }, [reportId, navigate]);
 

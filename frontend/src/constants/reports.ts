@@ -1,7 +1,7 @@
 import type { Report } from '@/types';
 
 export const REPORTS: Report[] = [
-  { id: 'sales-performance', name: 'Sales Performance', path: '/report/sales-performance' },
+  { id: 'sales-performance', name: 'Sales Performance', path: '/sales-performance' },
 ];
 
 export const REPORT_NAMES: Record<string, string> = {

@@ -9,7 +9,7 @@ const App = (): JSX.Element => {
       <Layout>
         <Routes>
           <Route path="/" element={<ReportView />} />
-          <Route path="/report/:reportId" element={<ReportView />} />
+          <Route path="/:reportId" element={<ReportView />} />
         </Routes>
       </Layout>
     </div>
