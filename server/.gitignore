@@ -37,3 +37,17 @@ wheels/
 .DS_Store
 Thumbs.db
 
+# Logs
+*.log
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Type checking
+.mypy_cache/
+.pytype/
+
+# Application
+/app/__pycache__/

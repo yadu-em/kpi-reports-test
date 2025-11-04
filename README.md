@@ -1,8 +1,22 @@
 # KPI Reports - Project Setup Guide
 
 ## Project Structure
-- `frontend/` - React frontend application
-- `server/` - FastAPI backend application
+- `frontend/` - React TypeScript frontend application (Vite)
+- `server/` - FastAPI Python backend application
+
+### Backend Structure
+```
+server/
+├── app/
+│   ├── main.py          # FastAPI application entry point
+│   ├── config.py        # Configuration settings
+│   ├── dependencies.py  # Shared dependencies
+│   ├── models/          # Pydantic data models
+│   ├── routes/          # API route handlers (controllers)
+│   └── services/        # Business logic layer
+├── run.py               # Development server runner
+└── requirements.txt     # Python dependencies
+```
 
 ## Setup Instructions
 
@@ -27,9 +41,9 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-Create `.env` file from `.env.example`:
+Create `.env` file:
 ```bash
-cp .env.example .env
+# Copy env.template to .env if available, or create manually
 ```
 
 Edit `.env` and add your PocketBase credentials:
@@ -43,6 +57,8 @@ python run.py
 ```
 
 The server will run on `http://localhost:8000`
+
+**Note:** The backend follows a clean architecture pattern with routes (controllers), services (business logic), and models (data structures).
 
 ### 2. Frontend Setup
 
@@ -74,8 +90,10 @@ The `kpi_reports` collection will be automatically created when the server start
 
 ## API Endpoints
 
-- `GET /` - Returns a hello message
-- `GET /health` - Health check endpoint
+- `GET /` - Returns a welcome message and API version
+- `GET /health` - Health check endpoint with PocketBase connection status
+- `GET /sales` - Get sales performance data
+- `GET /sales/typed` - Get sales data as typed Pydantic model
 
 ## Frontend Features
 
@@ -90,4 +108,6 @@ The `kpi_reports` collection will be automatically created when the server start
 - Make sure PocketBase is running before starting the backend server
 - The frontend uses Vite's proxy configuration to forward API requests to `http://localhost:8000`
 - The application includes a sidebar with reports list and a main content area for viewing reports
+- Backend follows clean architecture: routes → services → models
+- All endpoints are documented with OpenAPI/Swagger (available at `/docs` when server is running)
 
