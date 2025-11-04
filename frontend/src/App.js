@@ -10,8 +10,17 @@ function App() {
   useEffect(() => {
     const fetchHelloMessage = async () => {
       try {
-        const response = await axios.get('/');
-        setMessage(response.data.message || response.data);
+        // Use the backend API directly (CORS is configured)
+        const response = await axios.get('http://localhost:8000/', {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+        
+        // Check if response is actually JSON
+        if (response.status === 200 && response.data && response.data.message) {
+          setMessage(response.data.message);
+        }
         setLoading(false);
       } catch (err) {
         setError(err.message);
