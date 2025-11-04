@@ -1,12 +1,12 @@
 import type { Report } from '@/types';
 
 export const REPORTS: Report[] = [
-  { id: 'sales-performance', name: 'Sales Performance', path: '/sales-performance' },
+  { id: 'order-details', name: 'Order Details', path: '/order-details' },
 ];
 
 export const REPORT_NAMES: Record<string, string> = {
-  'sales-performance': 'Sales Performance',
+  'order-details': 'Order Details',
 };
 
-export const DEFAULT_REPORT_ID = REPORTS[0]?.id || 'sales-performance';
+export const DEFAULT_REPORT_ID = REPORTS[0]?.id || 'order-details';
 

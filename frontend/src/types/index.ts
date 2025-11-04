@@ -19,3 +19,20 @@ export interface ApiError {
   error?: string;
 }
 
+export interface OrderDetailItem {
+  jobNumber: string | null;
+  soNumber: string | null;
+  soLineNumber: string | null;
+  drawingTag: string | null;
+  jobQty: number | null;
+  jobStatus: string | null;
+}
+
+export interface OrderDetailsResponse {
+  items: OrderDetailItem[];
+  page: number;
+  perPage: number;
+  totalItems: number;
+  totalPages: number;
+}
+

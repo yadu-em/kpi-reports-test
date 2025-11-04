@@ -25,8 +25,14 @@ class Settings:
     
     # PocketBase Settings
     POCKETBASE_URL: Optional[str] = os.getenv("POCKETBASE_URL")
-    POCKETBASE_EMAIL: Optional[str] = os.getenv("POCKETBASE_EMAIL")
-    POCKETBASE_PASSWORD: Optional[str] = os.getenv("POCKETBASE_PASSWORD")
+    POCKETBASE_ADMIN_EMAIL: Optional[str] = os.getenv("POCKETBASE_ADMIN_EMAIL")
+    POCKETBASE_ADMIN_PASSWORD: Optional[str] = os.getenv("POCKETBASE_ADMIN_PASSWORD")
+    COMPANYCODE: Optional[str] = os.getenv("COMPANYCODE")
+    PLANTCODE: Optional[str] = os.getenv("PLANTCODE")
+    
+    # Legacy support (for backward compatibility)
+    POCKETBASE_EMAIL: Optional[str] = os.getenv("POCKETBASE_EMAIL") or POCKETBASE_ADMIN_EMAIL
+    POCKETBASE_PASSWORD: Optional[str] = os.getenv("POCKETBASE_PASSWORD") or POCKETBASE_ADMIN_PASSWORD
     
     # Server Settings
     HOST: str = "0.0.0.0"
