@@ -58,10 +58,12 @@ npm install
 
 Run the development server:
 ```bash
-npm start
+npm run dev
 ```
 
 The frontend will run on `http://localhost:3000`
+
+**Note:** The frontend has been migrated to Vite for faster development and better performance.
 
 ### 3. PocketBase Collection
 
@@ -75,8 +77,17 @@ The `kpi_reports` collection will be automatically created when the server start
 - `GET /` - Returns a hello message
 - `GET /health` - Health check endpoint
 
+## Frontend Features
+
+- **Modern Stack**: React 18 with Vite for fast development
+- **Routing**: React Router for navigation between reports
+- **Responsive Design**: Mobile-friendly sidebar and layout
+- **Color Theme**: Professional white and #e15a2d (coral orange) theme
+- **Layout**: 1/4 sidebar width, 3/4 content area (responsive on mobile)
+
 ## Notes
 
 - Make sure PocketBase is running before starting the backend server
-- The frontend proxy is configured to forward API requests to `http://localhost:8000`
+- The frontend uses Vite's proxy configuration to forward API requests to `http://localhost:8000`
+- The application includes a sidebar with reports list and a main content area for viewing reports
 
