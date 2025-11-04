@@ -1,8 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import ReportView from './components/ReportView';
+import './App.css';
 
-function App() {
+const App = (): JSX.Element => {
   return (
     <div className="App">
       <Layout>
@@ -13,6 +14,7 @@ function App() {
       </Layout>
     </div>
   );
-}
+};
 
 export default App;
+

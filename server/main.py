@@ -92,3 +92,31 @@ async def root():
 async def health():
     return {"status": "healthy", "pocketbase_connected": pb is not None}
 
+@app.get("/sales")
+async def get_sales():
+    """
+    Get sales performance data.
+    Returns sample sales data for the KPI report.
+    """
+    # Sample sales data - in production, this would come from PocketBase or another data source
+    sales_data = {
+        "total_sales": 1250000,
+        "monthly_growth": 12.5,
+        "top_products": [
+            {"name": "Product A", "sales": 450000, "growth": 15.2},
+            {"name": "Product B", "sales": 380000, "growth": 8.7},
+            {"name": "Product C", "sales": 320000, "growth": 22.1},
+            {"name": "Product D", "sales": 100000, "growth": -3.4},
+        ],
+        "regions": [
+            {"name": "North", "sales": 420000, "target": 400000},
+            {"name": "South", "sales": 380000, "target": 400000},
+            {"name": "East", "sales": 280000, "target": 300000},
+            {"name": "West", "sales": 170000, "target": 200000},
+        ],
+        "period": "Q4 2024",
+        "last_updated": "2024-12-01T10:30:00Z"
+    }
+    
+    return sales_data
+

@@ -28,6 +28,23 @@
   line-height: 1.6;
 }
 
+.report-data {
+  background-color: #f8f8f8;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 1.5rem;
+  overflow-x: auto;
+}
+
+.data-display {
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+  color: #333333;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
 .report-placeholder {
   display: flex;
   align-items: center;
@@ -58,6 +75,10 @@
 
   .report-content {
     padding: 1rem;
+  }
+
+  .data-display {
+    font-size: 0.75rem;
   }
 }
 
